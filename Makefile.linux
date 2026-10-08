@@ -1,0 +1,31 @@
+# SPDX-License-Identifier: CC0-1.0
+#
+# SPDX-FileContributor: Lorenzooone, 2026
+
+CC := gcc
+CFLAGS := -Wall -Wextra -O2
+
+BUILD_DIR := build_linux
+TARGET := websocket_client_linux
+
+SRC_DIRS := source_linux source_websocket
+INC_DIRS := source_linux source_websocket
+
+SOURCES := $(foreach dir,$(SRC_DIRS),$(wildcard $(dir)/*.c))
+OBJECTS := $(patsubst %.c,$(BUILD_DIR)/%.o,$(SOURCES))
+INCLUDES := $(foreach dir,$(INC_DIRS),-I$(dir))
+
+.PHONY: all clean
+
+all: $(TARGET)
+
+$(TARGET): $(OBJECTS)
+	$(CC) $(OBJECTS) -o $@
+
+$(BUILD_DIR)/%.o: %.c
+	@mkdir -p $(dir $@)
+	$(CC) $(CFLAGS) $(INCLUDES) -c $< -o $@
+
+clean:
+	rm -rf $(BUILD_DIR) $(TARGET)
+

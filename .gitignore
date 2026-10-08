@@ -1,0 +1,7 @@
+*.nds
+*.sav
+build
+build_linux
+websocket_client_linux
+compile_commands.json
+settings.sh
