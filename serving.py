@@ -11,8 +11,8 @@ import threading
 import signal
 import os
 import sys
-import boto3
-import botocore
+#import boto3
+#import botocore
 from random import Random
 from time import sleep
 import http

@@ -12,8 +12,8 @@ This is not a complete implementation. As an example, it lacks TLS support (for 
 
 Included is a Python test server that can be run locally to test out the code.
 
-##Licensing
+## Licensing
 
-Code in the source\_websocket folder is under the MIT license.
+Code in source\_websocket is under the MIT license.
 
-Code in the source\_ds and source\_linux is meant as an example of how to use the Websocket client code, and is under SPDX-License-Identifier: CC0-1.0.
+Code in source\_ds and source\_linux is meant as an example of how to use the Websocket client code, and is under SPDX-License-Identifier: CC0-1.0.
